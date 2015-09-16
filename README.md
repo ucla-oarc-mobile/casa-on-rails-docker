@@ -50,7 +50,6 @@ This container (in addition to the casa-on-rails project is quite new, and is no
 
   * DB seeding is very weird, and simply assumes that if your admin user exists, the db has been seeded.
   * the production db info is overwritten at each startup
-  * the elasticsearch configuration currently allows only one casa to be connected to the same ES instance.
   * etc..
 
 ## Copyright

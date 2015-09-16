@@ -13,6 +13,7 @@ CASA_CONTACT_EMAIL=${CASA_CONTACT_EMAIL:-'joe@schmoecity.com'}
 sed -i "s|:uuid => '[^']*|:uuid => '$CASA_UUID|g" config/environments/$RAILS_ENV.rb
 sed -i "s|:user_contact.*|:user_contact => { :name => '$CASA_CONTACT_NAME', :email => '$CASA_CONTACT_EMAIL' }|g" config/environments/$RAILS_ENV.rb
 sed -i "s|host: 'localhost'|host: 'elasticsearch'|g" config/initializers/elasticsearch.rb
+sed -i "s|Rails.application.config.elasticsearch_index.*|Rails.application.config.elasticsearch_index = 'casa-$CASA_UUID'|g" config/initializers/elasticsearch.rb
 
 # set up a mysql database if a mysql container is linked! note some weird echoing. i'll fix this later, i promise.
 if [ -n "$MYSQL_ENV_MYSQL_ROOT_PASSWORD" ]; then
