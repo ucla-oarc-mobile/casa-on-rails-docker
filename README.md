@@ -4,7 +4,7 @@ This is a [docker](https://www.docker.io) image that eases setup of the [casa-on
 
 ## Usage
 
-The docker containers built from this repository can be found at the [docker hub](https://registry.hub.docker.com/u/ohmage/base/).
+The docker containers built from this repository can be found at the [docker hub](https://registry.hub.docker.com/u/stevenolen/casa-on-rails/).
 
 If you'd just like to start to get a feel for casa, and don't care about database persistence, feel free to start with this command:
 
