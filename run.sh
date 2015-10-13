@@ -10,8 +10,7 @@ CASA_CONTACT_NAME=${CASA_CONTACT_NAME:-'Joe Schmoe'}
 CASA_CONTACT_EMAIL=${CASA_CONTACT_EMAIL:-'joe@schmoecity.com'}
 
 # replace casa config items:
-sed -i "s|:uuid => '[^']*|:uuid => '$CASA_UUID|g" config/environments/$RAILS_ENV.rb
-sed -i "s|:user_contact.*|:user_contact => { :name => '$CASA_CONTACT_NAME', :email => '$CASA_CONTACT_EMAIL' }|g" config/environments/$RAILS_ENV.rb
+echo -e "casa:\n  engine:\n    uuid: '$CASA_UUID'\n\nstore:\n  user_contact:\n    - name: '$CASA_CONTACT_NAME'\n      email: '$CASA_CONTACT_EMAIL'" > config/casa.yml
 echo -e "hosts:\n  - host: elasticsearch\n    port: 9200\n\nindex: casa-$CASA_UUID" > config/elasticsearch.yml
 
 
@@ -37,6 +36,14 @@ if [ -n "$MYSQL_ENV_MYSQL_ROOT_PASSWORD" ]; then
    password: $DB_PASS
    host: $DB_HOST
    port: $DB_PORT
+" >> config/database.yml
+else
+  echo '' > config/database.yml
+  echo " ephemeral:
+   adapter: sqlite3
+   pool: 5
+   timeout: 5000
+   database: db/ephemeral.sqlite3
 " >> config/database.yml
 fi
 

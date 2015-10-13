@@ -25,9 +25,7 @@ RUN bundle exec blocks build
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
-ADD database.yml config/database.yml
 ADD secrets.yml config/secrets.yml
-ADD production.rb config/environments/production.rb
 ADD ephemeral.rb config/environments/ephemeral.rb
 
 EXPOSE 3000
