@@ -4,12 +4,12 @@ This is a [docker](https://www.docker.io) image that eases setup of the [casa-on
 
 ## Usage
 
-The docker containers built from this repository can be found at the [docker hub](https://registry.hub.docker.com/u/stevenolen/casa-on-rails/).
+The docker containers built from this repository can be found at the [docker hub](https://registry.hub.docker.com/u/ucla/casa-on-rails/).
 
 If you'd just like to start to get a feel for casa, and don't care about database persistence, feel free to start with this command:
 
 ```bash
-docker run -d -p 3000:3000 stevenolen/casa-on-rails
+docker run -d -p 3000:3000 ucla/casa-on-rails
 ```
 
 You can now find casa running at port 3000 on your docker host!
@@ -26,7 +26,7 @@ docker run -d
   -e DB_NAME=casa \
   -e DB_USER=casa \ 
   -e DB_PASS=casa \
-  stevenolen/casa-on-rails
+  ucla/casa-on-rails
 ```
 
 Note that in both cases port `8080` will be used on the docker host to support this container. Additionally, you'll likely want to pass a few environment variables for your case.
