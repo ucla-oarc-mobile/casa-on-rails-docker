@@ -12,7 +12,7 @@ If you'd just like to start to get a feel for casa, and don't care about databas
 docker run -d -p 3000:3000 ucla/casa-on-rails
 ```
 
-You can now find casa running at port 3000 on your docker host!
+You can now find casa running at port 3000 on your docker host and login withe the default username **admin** and password **password**.
 
 It should be noted that casa will complain about elasticsearch not being available (which disables app searching) and when you destroy the container, all the data will go with it!
 
